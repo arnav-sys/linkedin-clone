@@ -1,107 +1,33 @@
-![Hireable](https://img.shields.io/badge/Hireable-yes-success) ![](https://img.shields.io/badge/Mobile--responsive-yes-green) 
+#linkedin clone with react, redux and firebase
 
-## Fav-Book
+This is a linkedin clone made by react, redux and firebase.
 
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
+It has login and register functionality. Authentication is handled with firebase
 
-<!-- TABLE OF CONTENTS -->
+In the app you can post things and all the posts are stored in collection in firebase.
 
-## Table of Contents
+Redux is used to keep track of user.
 
-- [About the Project](#about-the-project)
-- [Contributors](#contributors)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+React hooks and components are used to create the ui of the app.
 
-### About the Project
+In the app folder the store is created
 
-> The <b>LinkedIn-clone</b> web application presents a custom LinkedIn-clone.
-> <br>
-> The APP is created with the latest industry standards using React.js and Redux Toolkit
-> <br>
-> Firebase is used for the backend <br>
-> <br>
+In the features folder reducer slice is created
 
-## App functionality
+In the components folder all the necessary app components are kept.
 
-- Visitors can register using Full name, image url, email, and password.
-- Logged in users can can view other peoples posts and can add their own post in the feed.
-- Users can click on avatar on the navbar to sign out.
+In the firebase file all the firebase variables are stored.
 
-<p align="center">
-    <img src="https://res.cloudinary.com/jstloyalty/image/upload/v1609620987/myPortfolio/hbc97p23p2cjs829lscw.png" alt="project-image" >
-</p>
+There are 5 main components in this app.
 
-## Live Link (Firebase)
+The first one is Sidebar in sidebar.js file under components directory where the ui of the sidebar is stored. It also renders a InputOption component where the tagline of the sidebar is rendered.
 
-[Project live link](https://linkedin-clone-e25d6.web.app/)
+the second one is the header component in header.js file under components directory where the ui of the header is stored. The file also renders HeaderOption component from headeroption.js file where the icons are created.
 
-### Built With
+in the userslice file a redux slice is created where the intialstate is user which is set to null. There are also redux reducers login and logout. The login reducer adds a user to the intialState of redux and the logout reducer sets the property to null to the intialState of redux. There is also a redux selector called select user which selects the intialState(user) of redux
 
-This project was built using these technologies.
+The third one is the feed component in which all the messages and the mid part of the app is rendered. It renders a chat input component where the person can type in chat and send it. ui icons are also there in the chat component. The value of the input is set to a react state and an onchange function is evoked that changes the state whenever input changes. When we type in enter a function called sendpost is invoked which adds the {name of the user, email of the user, input state, photoUrl, timestamp} into the firebase firestore collection called posts. This saves the message. The name of the user,email, photoUrl comes from user constant which is a redux selector. useEffect hook is also called which sets a posts react state to the collection of posts in firebase. After that it maps over the posts state and renders a Post component from "./Post.js" file which takes name, description, message and photoUrl as props and renders a beatiful ui for the post
 
-- React.js
-- Redux Toolkit
-- Firebase
-- GitHub
+the fourth one is the widgets component where the ui for the right side of the app is stored
 
-## Getting Started
-
-**To get this project set up on your local machine, follow these simple steps:**
-
-**Step 1**<br>
-Navigate through the local folder where you want to clone the repository and run<br>
-`git clone https://github.com/jstloyal/LinkedIn-clone`. It will clone the repo to your local folder.<br>
-**Step 2**<br>
-Run `cd 
-fav-book `<br>
-**Step 3**<br>
-Run `yarn install` to install the yarn packages from the `package.json` file.<br>
-**Step 4**<br>
-Run `yarn start` to start the webpack server, you can now navigate to `http://localhost:3000` to view the app. The server refreshes the app every time you make a change to a file used by it.<br>
-**Step 5**<br>
-Most important, enjoy the app!<br>
-
-## Tests
-
-1. Open Terminal
-
-2. Install dependencies (only if you did not install them previously):
-
-   `yarn install`
-
-3. Run the tests with the command:
-
-   `yarn test`
-
-
-## Contributors
-
-**Author**
-
-​**Adetayo Sunkanmi**
-
-- Github: [jstloyal](https://github.com/jstloyal)
-- Twitter: [@jstloyalty](https://twitter.com/jstloyalty)
-- Linkedin: [Adetayo Sunkanmi](https://www.linkedin.com/in/jstloyalty)
-- E-mail: jstloyalty@gmail.com
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-- [YouTub](https://www.youtube.org/)
-
-## License
-
-📝
-This project is [MIT](https://opensource.org/licenses/MIT) licensed.
-
-## Show your support
-
-If you've read this far....give us a ⭐️!
+the last component is the login page which has login and register functionality.

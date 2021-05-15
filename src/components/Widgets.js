@@ -1,7 +1,7 @@
-import React from 'react';
-import './Widgets.css';
-import InfoIcon from '@material-ui/icons/Info';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import React from "react";
+import "./Widgets.css";
+import InfoIcon from "@material-ui/icons/Info";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
 function Widgets() {
   const newsArticle = (heading, subtitle) => (
@@ -24,10 +24,10 @@ function Widgets() {
         <InfoIcon />
       </div>
 
-      {newsArticle("Coronavirus: Lagos updates", "Tops news - 324 readers")}
-      {newsArticle("Bitcoin hits new high", "Tops news - 2,324 readers")}
+      {newsArticle("arnav is the best programmer", "joe biden wins")}
+      {newsArticle("invest in stocks", "news upcoming")}
     </div>
-  )
+  );
 }
 
-export default Widgets
+export default Widgets;
